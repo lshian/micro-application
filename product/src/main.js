@@ -43,15 +43,21 @@ if (!window.__POWERED_BY_QIANKUN__) {
 }
 
 export async function bootstrap () {
-  console.log('bootstrap')
+  // console.log('bootstrap')
 }
 
 export async function mount (props) {
+  props.onGlobalStateChange((state, prev) => { // 监听qiankun全局变量
+    // console.log(state)
+  })
+
+  // 设置通讯
+  Vue.prototype.$onGlobalStateChange = props.onGlobalStateChange
+  Vue.prototype.$setGlobalState = props.setGlobalState
   render(props)
 }
 
 export async function unmount () {
-  console.log(instance)
   instance.$destroy()
   instance = null
   router = null

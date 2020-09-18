@@ -47,6 +47,8 @@ export async function bootstrap () {
 }
 
 export async function mount (props) {
+  Vue.prototype.$onGlobalStateChange = props.onGlobalStateChange
+  Vue.prototype.$setGlobalState = props.setGlobalState
   render(props)
 }
 

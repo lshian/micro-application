@@ -3,7 +3,6 @@
 </template>
 
 <script>
-import { Loading } from 'element-ui'
 export default {
   name: 'microBox',
 
@@ -11,15 +10,6 @@ export default {
     return {}
   },
 
-  mounted () {
-    Loading.service({target: '#layout_main'})
-  }
+  mounted () {}
 }
 </script>
-
-<style>
-  .microBox {
-    width: 100%;
-    height: 100%;
-  }
-</style>
